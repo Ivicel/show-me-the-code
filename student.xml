@@ -1,0 +1,1 @@
+<? xml version="1.0" encoding="UTF-8" ?><root><students><student><id>1</id><name>张三</name><math>150</math><chinese>120</chinese><english>100</english></student><student><id>2</id><name>李四</name><math>90</math><chinese>99</chinese><english>95</english></student><student><id>3</id><name>王五</name><math>60</math><chinese>66</chinese><english>68</english></student></students></root>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+	<meta charset="UTF-8">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compotible" content="IE=edge, chrome=1">
+	<meta http-equiv="Cache-Control" content="no-siteapp">
+	<meta name="description" content="">
+	<meta name="robots" content="index, follow">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>留言薄</title>
+	<style type="text/css">
+		.main > p {
+		    background: #004080;
+		    font-size: 24px;
+		    color: #fff;
+		    padding: 25px 0 25px 15px;
+		    margin-bottom: 0;
+		    margin-top: 0;
+		}
+
+		.main > div {
+			background: #78b8f8;
+			padding: 25px;
+		}
+
+		.content {
+			padding: 15px;
+		}
+
+		.content .comment-username,
+		.content .comment-date {
+			display: inline-block;
+			font-weight: 700;
+			font-size: 17px;
+		}
+
+		.content .comment-body {
+			background: #dbdbff;
+		}
+
+		.input-text {
+			border: none;
+			font-size: 16px;
+			padding: 10px;
+		}
+		
+		.input-comment {
+			margin-top: 10px;
+		}
+		.input-comment .input-text {
+			width: 300px;
+			height: 100px;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<p>留言簿</p>
+		<div>
+			<p>请尽情留言吧:</p>
+			<form method="POST" action=".">
+				<div>
+				{{ form.username.label }}
+				{{ form.username(class='input-text') }}
+				</div>
+				<div class="input-comment">
+				{{ form.comments.label}}
+				{{ form.comments(class='input-text') }}
+				</div>
+				{{ form.submit }}
+			</form>
+		</div>
+	</div>
+	<div class="content">
+		<p>留言历史信息</p>
+		{% for comment in comments %}
+		<div>
+			<p class="comment-username">{{ comment.name }}</p>
+			<p class="comment-date">留言于<span>{{ comment.date }}</span></p>
+			<p class="comment-body">{{ comment.body }}</p>
+		</div>
+		{% endfor %}
+	</div>
+</body>
+</html>
